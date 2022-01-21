@@ -1,3 +1,8 @@
+let input = document.querySelector('#input')
+let enter = document.querySelector('#button')
+
+
+
 let map = new Map
 let fibo;
 
@@ -10,8 +15,16 @@ function fib(n){
     }
     return fibo
 }
-let i = 1
-setInterval(() => {
-    console.log(i,' __ ', fib(i))
-    i++
-}, 100);
+
+enter.onclick = function(){
+    if (input.value == '') {
+        return
+    }
+    fib(parseInt(input.value))
+    input.value = fib(parseInt(input.value))
+    input.placeholder = fib(parseInt(input.value))
+
+}
+
+
+console.log(fib(200))

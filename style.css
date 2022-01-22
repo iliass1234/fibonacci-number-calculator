@@ -18,14 +18,6 @@ body{
   #input:hover{
       background-color: rgb(184, 184, 184);
   }
-  #input::after{
-    content: "";
-    display: absolute;
-    background: #c00;
-    height: 100px;
-    width: 100%;
-    bottom: -29px;
-  }
   #input:focus{
       outline: none;
   }
@@ -41,7 +33,25 @@ body{
       background-color: rgb(2, 112, 2);
   }
   #action{
-      position: absolute;
+      position: relative;
       transform: translate(0px);
       width:550;
   }
+#place-results{
+    margin-top: 20px;
+    display: grid;
+    justify-content: center;
+    gap: 15px;
+    grid-template-columns: repeat(12,auto);
+    grid-template-rows: repeat(100 , 20px);
+    background-color: rgb(255, 255, 255);
+    height: 100px;
+}
+.one-result{
+    padding: 5px;
+    border-radius: 2px;
+    background-color: rgb(12, 43, 20);
+    color: white;
+    width: 100%;
+    height: 100%;
+}

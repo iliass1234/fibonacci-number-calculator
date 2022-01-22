@@ -81,7 +81,7 @@ body{
     justify-content: start;
     gap: 15px;
     grid-template-columns: repeat(6,minmax(100px,1000px));
-    grid-template-rows: repeat(5 , 20px);
+    grid-template-rows: repeat(100 , 20px);
     background-color: rgba(231, 228, 228, 0);
     height: 100px;
     max-width: 900px;

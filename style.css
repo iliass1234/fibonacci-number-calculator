@@ -21,7 +21,7 @@ body{
   #input:focus{
       outline: none;
   }
-  #button{
+  #button {
     background-color: green;
     border: none;
     border-radius: 2px;
@@ -33,12 +33,50 @@ body{
       background-color: rgb(2, 112, 2);
       cursor: pointer;
   }
+  #down-button{
+    background-color: green;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    transform: translate(5px,0px);
+    font-size: 20px;
+    width: 30px;
+    height: 50px;
+  }
+  #down-button:hover{
+      cursor: pointer;
+      background-color: rgb(3, 112, 3);
+  }
+  #down-button:focus{
+    background-color: gray;
+  }
+
   #action{
+      background-color: rgb(255, 255, 255);
       position: relative;
       transform: translate(0px);
-      width:550;
+      width:600px;
   }
-#place-results{
+  #range{
+      display: none;
+  }
+  .n-input{
+      text-align: center;
+      padding: 5px;
+      font-size: 18px;
+      margin-top: 7px;
+      margin-left: 20px;
+      margin-right: 20px;
+      width: 60px;
+      height: 30px;
+      border: none;
+      background-color: rgb(204, 204, 204);
+      border-radius: 5px;
+  }
+  .n-input:focus{
+      outline-color: green;
+  }
+#place-results {
     margin-top: 20px;
     margin-right: 10px;
     display: grid;
@@ -46,7 +84,7 @@ body{
     gap: 15px;
     grid-template-columns: repeat(6,minmax(100px,1000px));
     grid-template-rows: repeat(5 , 20px);
-    background-color: rgb(231, 228, 228);
+    background-color: rgba(231, 228, 228, 0);
     height: 100px;
     max-width: 900px;
 }

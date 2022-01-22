@@ -43,8 +43,6 @@ function addResult(){
     place.appendChild(divo)
 }
 //----------------------------------------------------
-let j = fib(parseInt(12))
-console.log(fixResultBig(123456789101112))
 enter.onclick = addResult
 
 input.addEventListener('keydown',(event)=>{

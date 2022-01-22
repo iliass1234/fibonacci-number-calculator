@@ -39,19 +39,26 @@ body{
   }
 #place-results{
     margin-top: 20px;
+    margin-right: 10px;
     display: grid;
-    justify-content: center;
+    justify-content: start;
     gap: 15px;
-    grid-template-columns: repeat(12,auto);
-    grid-template-rows: repeat(100 , 20px);
-    background-color: rgb(255, 255, 255);
+    grid-template-columns: repeat(5,minmax(50px,1000px));
+    grid-template-rows: repeat(5 , 20px);
+    background-color: rgb(231, 228, 228);
     height: 100px;
+    max-width: 900px;
 }
 .one-result{
     padding: 5px;
+    padding-bottom: 2px;
     border-radius: 2px;
-    background-color: rgb(12, 43, 20);
+    background-color: rgb(49, 121, 67);
     color: white;
     width: 100%;
     height: 100%;
+}
+.span1{
+    background-color: rgb(0, 0, 0);
+    height: inherit;
 }

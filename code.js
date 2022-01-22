@@ -31,18 +31,27 @@ function addResult(){
     if (input.value == '') {
         return
     }
-    input.value = fib(parseInt(val))
+    let fibResult = fib(parseInt(val)) 
+    input.value = fibResult
     let divo = document.createElement('div')
     let divoSpan1 = document.createElement('span')
     let divoSpan2 = document.createElement('span')
     divoSpan1.className = 'span1'
+    divoSpan2.className = 'span2'
+    divo.dataset.hi = fibResult
     divoSpan1.innerText = val
-    divoSpan2.innerText = fixResultBig(fib(parseInt(val)))
+    divoSpan2.innerText = fixResultBig(fibResult)
     divo.className = 'one-result'
     divo.append(divoSpan1,' : ',divoSpan2)
     place.appendChild(divo)
+    divo.onclick = function (){
+        alert(`${divo.dataset.hi}`)
+    }
 }
+
 //----------------------------------------------------
+let j = fib(parseInt(12))
+console.log(fixResultBig(123456789101112))
 enter.onclick = addResult
 
 input.addEventListener('keydown',(event)=>{

@@ -2,14 +2,17 @@ let input = document.querySelector('#input')
 let enter = document.querySelector('#button')
 let place = document.querySelector('#place-results')
 let rangeArea = document.querySelector('#range')
+let downBtn = document.querySelector('#down-button')
 let map = new Map
 let fibo;
 
 let hideRange = ()=>{
     if (rangeArea.style.display === 'none') {
+        downBtn.style.backgroundColor= 'gray'
         rangeArea.style.display = 'inline-block'
         return
     }
+    downBtn.style.backgroundColor= 'green'
     rangeArea.style.display = 'none'
 }
 

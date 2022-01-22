@@ -1,9 +1,17 @@
 let input = document.querySelector('#input')
 let enter = document.querySelector('#button')
 let place = document.querySelector('#place-results')
-
+let rangeArea = document.querySelector('#range')
 let map = new Map
 let fibo;
+
+let hideRange = ()=>{
+    if (rangeArea.style.display === 'none') {
+        rangeArea.style.display = 'inline-block'
+        return
+    }
+    rangeArea.style.display = 'none'
+}
 
 function fib(n){
     if (map.has(n)) {return map.get(n)}
@@ -28,10 +36,23 @@ function fixResultBig(res){
 
 function addResult(){
     let val = input.value
+    let fibResult
     if (input.value == '') {
         return
     }
-    let fibResult = fib(parseInt(val)) 
+    if (!(/\d/).test(val)) {
+        input.value = 'Enter valid number'
+        return
+    }
+    if (parseInt(val) > 1476 || val.length>4) {
+        input.value = 'Infinity / over 10^320'
+        fibResult = 'Infinity'
+        return
+    }
+
+    fibResult = fib(parseInt(val)) 
+
+
     input.value = fibResult
     let divo = document.createElement('div')
     let divoSpan1 = document.createElement('span')
@@ -44,18 +65,18 @@ function addResult(){
     divo.className = 'one-result'
     divo.append(divoSpan1,' : ',divoSpan2)
     place.appendChild(divo)
-    divo.onclick = function (){
-        alert(`${divo.dataset.hi}`)
+    divo.onmouseover = function (){
+        input.value = ''
+        input.placeholder = divo.dataset.hi
     }
+    divo.onmouseleave = ()=>{input.value = ''; input.placeholder = 'Enter a number'}
 }
 
 //----------------------------------------------------
-let j = fib(parseInt(12))
-console.log(fixResultBig(123456789101112))
 enter.onclick = addResult
 
 input.addEventListener('keydown',(event)=>{
-    if (event.keyCode == 13 && input.value !== '' && parseInt(input.value)/2) {
+    if (event.keyCode == 13) {
        addResult()
     }
 })

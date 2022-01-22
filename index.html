@@ -13,13 +13,22 @@
           <div id="action">
           <input type="text" placeholder="enter a number" id="input">
           <button id="button">Enter</button>
+          <button id="down-button" onclick="hideRange()">...</button>
           </div>
+          <div id="range">
+              <h2>enter the range that you want to see fabonaccies for:</h2>
+              <h3>(maximum range: 100)</h3>
+              <span style="font-family: monospace; font-size: 20px;">from:</span>
+              <input placeholder="n1:" type="text" class="n-input" id="first-n"><span style="font-family: monospace; font-size: 20px;">to:</span> <input placeholder="n2" type="text" class="n-input" id="last-n">
+              <button style="height: 32px; width: 75px;" id="button">display ></button>
+          </div>
+
           <div id="place-results">
-              
           </div>
+
 
       </main>
 
-    <script src="g.js"></script>
+    <script src="code.js"></script>
   </body>
 </html>

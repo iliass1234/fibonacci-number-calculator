@@ -3,19 +3,12 @@ let enter = document.querySelector('#button')
 let place = document.querySelector('#place-results')
 let rangeArea = document.querySelector('#range')
 let downBtn = document.querySelector('#down-button')
+let firstRange = document.querySelector('#first-n')
+let lastRange = document.querySelector('#last-n')
+
+
 let map = new Map
 let fibo;
-
-let hideRange = ()=>{
-    if (rangeArea.style.display === 'none') {
-        downBtn.style.backgroundColor= 'gray'
-        rangeArea.style.display = 'inline-block'
-        return
-    }
-    downBtn.style.backgroundColor= 'green'
-    rangeArea.style.display = 'none'
-}
-
 function fib(n){
     if (map.has(n)) {return map.get(n)}
     if(n <= 2){return 1}
@@ -26,21 +19,13 @@ function fib(n){
     return fibo
 }
 
-function fixResultBig(res){
-    let str = res.toString()
-    if (str.length>10) {
-        str = str.split('')
-        str = str.slice(0,10)
-        str.push('...')
-        str = str.join('')
-    } 
-    return str
-}
 
-function addResult(){
-    let val = input.value
+
+function addResult(val){
     let fibResult
-    if (input.value == '') {
+    fibResult = fib(parseInt(val)) 
+
+    if (val == '') {
         return
     }
     if (!(/\d/).test(val)) {
@@ -52,11 +37,6 @@ function addResult(){
         fibResult = 'Infinity'
         return
     }
-
-    fibResult = fib(parseInt(val)) 
-
-
-    input.value = fibResult
     let divo = document.createElement('div')
     let divoSpan1 = document.createElement('span')
     let divoSpan2 = document.createElement('span')
@@ -75,11 +55,51 @@ function addResult(){
     divo.onmouseleave = ()=>{input.value = ''; input.placeholder = 'Enter a number'}
 }
 
+
+
+function displayBtn(){
+    let diff = (lastRange.value - firstRange.value)
+    if ( diff <= 100) {
+        for (let i = parseInt(firstRange.value); i <= parseInt(firstRange.value)+diff; i++) {
+            addResult(i)
+            
+        }
+    }
+}
+
+let hideRange = ()=>{
+    if (rangeArea.style.display === 'none') {
+        downBtn.style.backgroundColor= 'gray'
+        rangeArea.style.display = 'inline-block'
+        return
+    }
+    downBtn.style.backgroundColor= 'green'
+    rangeArea.style.display = 'none'
+}
+
+
+function fixResultBig(res){
+    let str = res.toString()
+    if (str.length>10) {
+        str = str.split('')
+        str = str.slice(0,10)
+        str.push('...')
+        str = str.join('')
+    } 
+    return str
+}
+
+
 //----------------------------------------------------
-enter.onclick = addResult
+enter.addEventListener('click',()=>{
+    addResult(input.value)
+})
 
 input.addEventListener('keydown',(event)=>{
     if (event.keyCode == 13) {
-       addResult()
+       addResult(input.value)
     }
 })
+
+
+

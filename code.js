@@ -5,7 +5,7 @@ let rangeArea = document.querySelector('#range')
 let downBtn = document.querySelector('#down-button')
 let firstRange = document.querySelector('#first-n')
 let lastRange = document.querySelector('#last-n')
-
+let hoverTxt = document.querySelector('#hover-txt')
 
 let map = new Map
 let fibo;
@@ -20,6 +20,9 @@ function fib(n){
 }
 
 
+function hoverText(){
+    hoverTxt.style.visibility = 'visible'
+}
 
 function addResult(val){
     let fibResult
@@ -37,6 +40,7 @@ function addResult(val){
         fibResult = 'Infinity'
         return
     }
+    hoverText()
     let divo = document.createElement('div')
     let divoSpan1 = document.createElement('span')
     let divoSpan2 = document.createElement('span')
@@ -54,8 +58,6 @@ function addResult(val){
     }
     divo.onmouseleave = ()=>{input.value = ''; input.placeholder = 'Enter a number'}
 }
-
-
 
 function displayBtn(){
     let diff = (lastRange.value - firstRange.value)
@@ -80,10 +82,10 @@ let hideRange = ()=>{
 
 function fixResultBig(res){
     let str = res.toString()
-    if (str.length>10) {
+    if (str.length>5) {
         str = str.split('')
-        str = str.slice(0,10)
-        str.push('...')
+        str = str.slice(0,5)
+        str.push('..')
         str = str.join('')
     } 
     return str
@@ -100,6 +102,3 @@ input.addEventListener('keydown',(event)=>{
        addResult(input.value)
     }
 })
-
-
-

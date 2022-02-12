@@ -58,7 +58,6 @@ function addResult(val){
     }
     divo.onmouseleave = ()=>{input.value = ''; input.placeholder = 'Enter a number'}
 }
-
 function displayBtn(){
     let diff = (lastRange.value - firstRange.value)
     if ( diff <= 100) {
@@ -68,6 +67,21 @@ function displayBtn(){
         }
     }
 }
+
+
+
+lastRange.addEventListener('keydown',(e)=>{
+    if(e.keyCode == 13){
+        let diff = (lastRange.value - firstRange.value)
+        if ( diff <= 100) {
+            for (let i = parseInt(firstRange.value); i <= parseInt(firstRange.value)+diff; i++) {
+                addResult(i)
+                
+            }
+        }
+    }
+})
+
 
 let hideRange = ()=>{
     if (rangeArea.style.display === 'none') {
@@ -90,8 +104,6 @@ function fixResultBig(res){
     } 
     return str
 }
-
-
 //----------------------------------------------------
 enter.addEventListener('click',()=>{
     addResult(input.value)
@@ -102,3 +114,6 @@ input.addEventListener('keydown',(event)=>{
        addResult(input.value)
     }
 })
+
+
+

@@ -68,8 +68,6 @@ function displayBtn(){
     }
 }
 
-
-
 lastRange.addEventListener('keydown',(e)=>{
     if(e.keyCode == 13){
         let diff = (lastRange.value - firstRange.value)
@@ -81,7 +79,6 @@ lastRange.addEventListener('keydown',(e)=>{
         }
     }
 })
-
 
 let hideRange = ()=>{
     if (rangeArea.style.display === 'none') {

@@ -6,6 +6,10 @@ let downBtn = document.querySelector('#down-button')
 let firstRange = document.querySelector('#first-n')
 let lastRange = document.querySelector('#last-n')
 let hoverTxt = document.querySelector('#hover-txt')
+let popUp = document.querySelector('#pop-up-card');
+
+
+popUp.style.display = 'block'
 
 let map = new Map
 let fibo;
@@ -62,8 +66,7 @@ function displayBtn(){
     let diff = (lastRange.value - firstRange.value)
     if ( diff <= 100) {
         for (let i = parseInt(firstRange.value); i <= parseInt(firstRange.value)+diff; i++) {
-            addResult(i)
-            
+            addResult(i);
         }
     }
 }
@@ -111,6 +114,3 @@ input.addEventListener('keydown',(event)=>{
        addResult(input.value)
     }
 })
-
-
-

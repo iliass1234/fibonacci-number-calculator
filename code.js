@@ -59,7 +59,7 @@ function addResult(val){
     }
     divo.onmouseleave = ()=>{input.value = ''; input.placeholder = 'Enter a number'}
     divo.onclick = function (){
-        
+        document.querySelector('#pop-up-card > p').innerText = this.dataset.fib
         popUp.style.display = 'block'
     }
     document.body.onmousedown = function () { popUp.style.display = 'none'}

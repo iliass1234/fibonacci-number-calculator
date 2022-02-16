@@ -55,7 +55,7 @@ function addResult(val){
     divo.dataset.fib = fibResult
     divoSpan1.innerText = val
     divoSpan2.innerText = fixResultBig(fibResult)
-    divo.className = 'one-result'
+    divo.className = 'one-result';
     divo.append(divoSpan1,' : ',divoSpan2)
     place.appendChild(divo)
     divo.onmouseover = function (){

@@ -28,6 +28,18 @@ main{
     margin-bottom: 10%;
     font-size: 20px;
 }
+#pop-up-card > button{
+    padding: 5px 20px;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: white;
+}
+#pop-up-card > button:hover{
+    cursor:pointer;
+    background-color:rgb(196, 255, 196);
+}
 #title{
     width: auto;
     font-size: 40px;

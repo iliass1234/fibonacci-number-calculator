@@ -60,9 +60,13 @@ function addResult(val){
     divo.onmouseleave = ()=>{input.value = ''; input.placeholder = 'Enter a number'}
     divo.onclick = function (){
         document.querySelector('#pop-up-card > p').innerText = this.dataset.fib
+        document.querySelector('#pop-up-card > button').onclick = function (){
+            alert('fuck')
+        }
         popUp.style.display = 'block'
-    }
-    document.body.onmousedown = function () { popUp.style.display = 'none'}
+    } 
+    document.querySelector('#pop-up-card > span').onclick = function () { 
+        popUp.style.display = 'none'} 
 }
 function displayBtn(){
     let diff = (lastRange.value - firstRange.value)

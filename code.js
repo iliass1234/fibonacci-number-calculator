@@ -7,9 +7,7 @@ let firstRange = document.querySelector('#first-n')
 let lastRange = document.querySelector('#last-n')
 let hoverTxt = document.querySelector('#hover-txt')
 let popUp = document.querySelector('#pop-up-card');
-
-
-popUp.style.display = 'block'
+let oneResult = document.querySelector('.one-result')
 
 let map = new Map
 let fibo;
@@ -27,9 +25,8 @@ function fib(n){
 function hoverText(){
     hoverTxt.style.visibility = 'visible'
 }
-
 function addResult(val){
-    let fibResult
+    let fibResult;
     fibResult = fib(parseInt(val)) 
 
     if (val == '') {
@@ -48,19 +45,24 @@ function addResult(val){
     let divo = document.createElement('div')
     let divoSpan1 = document.createElement('span')
     let divoSpan2 = document.createElement('span')
-    divoSpan1.className = 'span1'
-    divoSpan2.className = 'span2'
-    divo.dataset.hi = fibResult
+    divoSpan1.className = 'span1' ; divoSpan2.className = 'span2' ;
+    divo.dataset.fib = fibResult
     divoSpan1.innerText = val
     divoSpan2.innerText = fixResultBig(fibResult)
     divo.className = 'one-result'
     divo.append(divoSpan1,' : ',divoSpan2)
     place.appendChild(divo)
     divo.onmouseover = function (){
+        divo.style.cursor = 'pointer'
         input.value = ''
-        input.placeholder = divo.dataset.hi
+        input.placeholder = divo.dataset.fib
     }
     divo.onmouseleave = ()=>{input.value = ''; input.placeholder = 'Enter a number'}
+    divo.onclick = function (){
+        
+        popUp.style.display = 'block'
+    }
+    document.body.onmousedown = function () { popUp.style.display = 'none'}
 }
 function displayBtn(){
     let diff = (lastRange.value - firstRange.value)
@@ -92,8 +94,6 @@ let hideRange = ()=>{
     downBtn.style.backgroundColor= 'green'
     rangeArea.style.display = 'none'
 }
-
-
 function fixResultBig(res){
     let str = res.toString()
     if (str.length>5) {
@@ -114,3 +114,33 @@ input.addEventListener('keydown',(event)=>{
        addResult(input.value)
     }
 })
+
+/* --------------------------------test--------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -9,7 +9,11 @@ let hoverTxt = document.querySelector('#hover-txt')
 let popUp = document.querySelector('#pop-up-card');
 let oneResult = document.querySelector('.one-result')
 
-let map = new Map
+
+//--------------------------------- fib ACTION  -------------------------------------------------------------
+
+let map = new Map()
+
 let fibo;
 function fib(n){
     if (map.has(n)) {return map.get(n)}
@@ -20,6 +24,8 @@ function fib(n){
     }
     return fibo
 }
+
+//--------------------------------- ^^^^^^ UP ACTION ^^^^^^ -------------------------------------------------------------
 
 
 function hoverText(){
@@ -61,11 +67,15 @@ function addResult(val){
     divo.onclick = function (){
         document.querySelector('#pop-up-card > p').innerText = this.dataset.fib
         document.querySelector('#pop-up-card > button').onclick = function (){
-            alert('fuck')
+            popUp.style.backgroundColor = 'gray'
+            document.querySelector('#pop-up-card > button').innerText = 'copied'
+            navigator.clipboard.writeText(divo.dataset.fib);
         }
         popUp.style.display = 'block'
     } 
     document.querySelector('#pop-up-card > span').onclick = function () { 
+        popUp.style.backgroundColor = 'green'
+        document.querySelector('#pop-up-card > button').innerText = 'copy'
         popUp.style.display = 'none'} 
 }
 function displayBtn(){

@@ -66,6 +66,8 @@ main{
     transition: 1s;
 }
 #input{
+    height: 50px;
+    flex: 3 2 100px;
     background-color: rgb(196, 196, 196);
     font-size: 20px;
     border: none;
@@ -79,7 +81,8 @@ main{
       outline: none;
   }
   #button {
-    flex: 0 2 100px;
+    height:50px;
+    flex: 1 2 100px;
     background-color: green;
     border: none;
     border-radius: 2px;
@@ -89,6 +92,7 @@ main{
       cursor: pointer;
   }
   #down-button{
+      height: 50px;
     flex: 0 2 50px;
     background-color: green;
     border: none;
@@ -114,7 +118,7 @@ main{
       gap: 5px;
       margin-top: 50px;
       background-color: rgb(255, 255, 255);
-      height: 50px;
+      height: 100px;
       max-width:800px;
   }
   #range{

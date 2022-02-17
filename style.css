@@ -168,9 +168,9 @@ main{
     display: inline;
 }
 
-
-
 @media (max-width: 800px){
-
-
+body{
+    display: block;
+    background-color: red;
+}
 }

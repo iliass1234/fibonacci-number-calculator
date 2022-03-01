@@ -13,14 +13,17 @@ let oneResult = document.querySelector('.one-result')
 //--------------------------------- fib ACTION  -------------------------------------------------------------
 
 let map = new Map()
-
 let fibo;
 function fib(n){
     if (map.has(n)) {return map.get(n)}
-    if(n <= 2){return 1}
+    if(n === 1){return 0}
+    if(n === 2){return 1}
     else{
         fibo = fib(n-1)+fib(n-2)
         map.set(n,fibo)
+        if (map.has(n-2)) {
+            map.delete(n-2)
+        }
     }
     return fibo
 }
@@ -68,7 +71,7 @@ function addResult(val){
         document.querySelector('#pop-up-card > p').innerText = this.dataset.fib
         popUp.style.backgroundColor = 'green'
         document.querySelector('#pop-up-card > button').innerText = 'copy'
-        
+
         document.querySelector('#pop-up-card > button').onclick = function (){
             popUp.style.backgroundColor = 'gray'
             document.querySelector('#pop-up-card > button').innerText = 'copied'

@@ -8,7 +8,7 @@ let lastRange = document.querySelector('#last-n')
 let hoverTxt = document.querySelector('#hover-txt')
 let popUp = document.querySelector('#pop-up-card');
 let oneResult = document.querySelector('.one-result')
-
+let clearButton = document.querySelector('#clear-btn')
 
 //--------------------------------- fib ACTION  -------------------------------------------------------------------------
 
@@ -31,6 +31,16 @@ function fib(n){
 //--------------------------------- ^^^^^^ UP ACTION ^^^^^^ -------------------------------------------------------------
 
 
+clearButton.onclick = function (){
+    let target = document.querySelectorAll('.one-result')
+    place.remove()
+    let divv = document.createElement('div').setAttribute('class','one-result')
+
+    console.log(document.querySelector('main').appendChild());
+
+
+    input.value = ''
+}
 function hoverText(){
     hoverTxt.style.visibility = 'visible'
 }

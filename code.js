@@ -10,7 +10,7 @@ let popUp = document.querySelector('#pop-up-card');
 let oneResult = document.querySelector('.one-result')
 
 
-//--------------------------------- fib ACTION  -------------------------------------------------------------
+//--------------------------------- fib ACTION  -------------------------------------------------------------------------
 
 let map = new Map()
 let fibo;

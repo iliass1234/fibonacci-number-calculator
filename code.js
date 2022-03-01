@@ -33,9 +33,9 @@ function fib(n){
 
 clearButton.onclick = function (){
     let target = document.querySelectorAll('.one-result')
-for (let index = target.length-1 ; index >= 0; index--) {
-    place.removeChild(target[index])
-}
+    for (let index = target.length-1 ; index >= 0; index--) {
+        place.removeChild(target[index])
+    }
     input.value = ''
 }
 function hoverText(){
